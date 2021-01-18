@@ -19,6 +19,7 @@ checkmarks_list = ["__", "__", "__", "__"]
 
 # ---------------------------- TIMER RESET ------------------------------- #
 def reset_timer():
+    start_button["state"] = "active"
     global checkmarks_list
     global reps
     reps = 0
@@ -30,6 +31,7 @@ def reset_timer():
 
 
 def work_sessions_completed():
+    start_button["state"] = "active"
     global checkmarks_list
     global reps
     reps = 0
@@ -43,6 +45,7 @@ def work_sessions_completed():
 # ---------------------------- TIMER MECHANISM ------------------------------- #
 
 def start_timer():
+    start_button["state"] = "disabled"
     global reps
     reps += 1
     if reps == 9:
