@@ -1,5 +1,6 @@
 from tkinter import *
 import math
+import winsound
 
 # ---------------------------- CONSTANTS ------------------------------- #
 PINK = "#e2979c"
@@ -80,6 +81,8 @@ def count_down(count):
         global timer
         timer = window.after(1000, count_down, count - 1)
     else:
+        window.focus_force()
+        winsound.PlaySound("SystemExit", winsound.SND_ALIAS)
         start_timer()
         for _ in range(math.floor(reps / 2)):
             checkmarks_list[_] = "✔"
